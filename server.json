@@ -1,0 +1,86 @@
+{
+  "stock": [
+    {
+      "id": 1,
+      "amount": 3
+    },
+    {
+      "id": 2,
+      "amount": 5
+    },
+    {
+      "id": 3,
+      "amount": 2
+    },
+    {
+      "id": 4,
+      "amount": 1
+    },
+    {
+      "id": 5,
+      "amount": 5
+    },
+    {
+      "id": 6,
+      "amount": 3
+    },
+    {
+      "id": 7,
+      "amount": 3
+    },
+    {
+      "id": 8,
+      "amount": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Apple iPhone 11 - 128GB - Roxo",
+      "price": 689.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/82/e0/54/5562498/1545-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Apple iPhone 11 Pro - 64GB - Cinzento Sideral",
+      "price": 999.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/94/e1/54/5562772/1545-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Apple iPhone 11 - 128GB - Verde",
+      "price": 689.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/83/e0/54/5562499/1545-1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Samsung Galaxy S20+ - 128GB - Cinzento Cósmico",
+      "price": 849.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/5f/0a/5a/5900895/1545-1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Samsung Galaxy Note20 Ultra 5G - 256GB - Mystic Bronze",
+      "price": 1339.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/8f/8e/60/6327951/1545-1.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Smartphone Xiaomi Mi Note 10 Pro - 256GB - Glacier White",
+      "price": 1510.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/e6/4f/57/5722086/1545-1.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Smartphone Xiaomi 9 lite Mi 6GB 128GB",
+      "price": 618.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/MC/bc/c1/11/17940924/1539-1.jpg#571021d7-5c21-4cee-9d73-7f7976445cfa"
+    },
+    {
+      "id": 8,
+      "title": "Smartphone Xiaomi Mi Note 10 Pro - 256GB - Glacier White",
+      "price": 1510.9,
+      "image": "https://static.fnac-static.com/multimedia/Images/PT/NR/e6/4f/57/5722086/1545-1.jpg"
+    }
+  ]
+}
