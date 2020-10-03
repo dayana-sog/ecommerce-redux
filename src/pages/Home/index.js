@@ -5,6 +5,7 @@ import BannerHome from '../../components/BannerHome';
 import TopCategory from '../../components/TopCategory';
 import Catalog from '../../components/Catalog';
 import BannerBottom from '../../components/BannerBottom';
+import Footer from '../../components/Footer';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <TopCategory />
       <Catalog />
       <BannerBottom />
+      <Footer />
     </>
   );
 }

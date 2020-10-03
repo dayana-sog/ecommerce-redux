@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 const bounce = keyframes`
   0%   { transform: translateY(0) }
-  50%  { transform: translateY(-20px) }
+  50%  { transform: translateY(-15px) }
   100% { transform: translateY(0) }
 `;
 
