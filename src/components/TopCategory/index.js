@@ -4,7 +4,7 @@ import celular1 from '../../assets/celular1.jpg';
 import celular2 from '../../assets/celular2.jpg';
 import celular3 from '../../assets/celular3.jpg';
 
-import { Container } from './styles';
+import { Container, Banner2 } from './styles';
 
 const items = [
   {
@@ -40,6 +40,15 @@ function TopCategory() {
           </li>
         ))}
       </ul>
+
+      <Banner2>
+        <h1>Corre e compre já o seu!</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Necessitatibus tempora.
+        </p>
+        <button type="button">Compre agora</button>
+      </Banner2>
     </Container>
   );
 }

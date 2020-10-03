@@ -16,6 +16,7 @@ export default createGlobalStyle`
     --background-white-light: ##f8f9fa;
 
     --red-button: #ff4135;
+    --white-button: #fff;
 
     --letter-white: #fff;
     --letter-grey: #333;

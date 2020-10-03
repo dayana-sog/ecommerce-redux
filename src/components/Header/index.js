@@ -18,10 +18,10 @@ function Header() {
       <ul>
         <li>Home</li>
         <li>
-          Shop <FaChevronDown size={15} color="#333" />{' '}
+          Shop <FaChevronDown size={15} />{' '}
         </li>
         <li>
-          Pages <FaChevronDown size={15} color="#333" />{' '}
+          Pages <FaChevronDown size={15} />{' '}
         </li>
         <li>Contacto</li>
       </ul>
