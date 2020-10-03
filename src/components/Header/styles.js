@@ -6,11 +6,14 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 7rem;
+  padding: 0 10rem;
 
-  margin: 0 10rem;
-
-  background: var(--background-white-light);
-  color: var(--letter-grey);
+  box-shadow: 0 2px 5px #0000000d;
+  width: 100% !important;
+  background: #fff !important;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 
   img {
     width: 8em;

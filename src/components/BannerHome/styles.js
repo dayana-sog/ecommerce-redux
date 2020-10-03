@@ -33,7 +33,7 @@ export const Container = styled.section`
     justify-content: space-between;
     align-items: center;
 
-    margin: 0 20rem;
+    margin: 7rem 20rem;
     padding: 5rem 0;
   }
 
