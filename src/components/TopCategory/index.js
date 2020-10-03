@@ -31,7 +31,7 @@ function TopCategory() {
 
       <ul className="container-banner">
         {items.map((item) => (
-          <li key={item.id}>
+          <li key={item.title}>
             <img src={item.img} alt={item.title} />
             <div className="container-banner-footer">
               <h2>{item.title}</h2>

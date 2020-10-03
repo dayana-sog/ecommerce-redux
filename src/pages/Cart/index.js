@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
@@ -7,72 +8,72 @@ import {
 
 import img from '../../assets/celular1.jpg';
 
-import Header from '../../components/Header';
-
 import { Container, ProductTable, Total } from './styles';
 
 function Cart() {
+  const cart = useSelector(state => state.cart.items);
+
+  console.log(cart);
+
   return (
-    <>
-      <Header />
+    <Container>
+      <ProductTable>
+        <thead>
+          <tr>
+            <th />
+            <th>PRODUTO</th>
+            <th>QUANTIDADE</th>
+            <th>SUBTOTAL</th>
+            <th />
+          </tr>
+        </thead>
 
-      <Container>
-        <ProductTable>
-          <thead>
-            <tr>
-              <th />
-              <th>PRODUTO</th>
-              <th>QUANTIDADE</th>
-              <th>SUBTOTAL</th>
-              <th />
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
+        <tbody>
+          {cart.map(item => (
+            <tr key={item.product.id}>
               <td>
-                <img src={img} alt="celuar" />
+                <img src={item.product.image} alt={item.product.title} />
               </td>
               <td>
-                <strong>Samsung alguma coisa</strong>
+                <strong>{item.product.title}</strong>
 
-                <span>1590.0€</span>
+                <span>{item.product.price}</span>
               </td>
               <td>
                 <div>
-                  <button type="button" onClick={() => {}}>
+                  <button type="button" onClick={() => { }}>
                     <MdRemoveCircleOutline size={20} color="#454777" />
                   </button>
 
-                  <input type="number" readOnly value="2" />
+                  <input type="number" readOnly value={item.quantity} />
 
-                  <button type="button" onClick={() => {}}>
+                  <button type="button" onClick={() => { }}>
                     <MdAddCircleOutline size={20} color="#454777" />
                   </button>
                 </div>
               </td>
               <td>
-                <strong>2090.9€</strong>
+                <strong>{item.product.price * item.quantity}</strong>
               </td>
               <td>
-                <button type="button" onClick={() => {}}>
+                <button type="button" onClick={() => { }}>
                   <MdDelete size={20} color="#454777" />
                 </button>
               </td>
             </tr>
-          </tbody>
-        </ProductTable>
+          ))}
+        </tbody>
+      </ProductTable>
 
-        <footer>
-          <button type="button">Finalizar pedido</button>
+      <footer>
+        <button type="button">Finalizar pedido</button>
 
-          <Total>
-            <span>TOTAL</span>
-            <strong>1445,00€</strong>
-          </Total>
-        </footer>
-      </Container>
-    </>
+        <Total>
+          <span>TOTAL</span>
+          <strong>1445,00€</strong>
+        </Total>
+      </footer>
+    </Container>
   );
 }
 
