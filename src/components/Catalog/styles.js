@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  height: 150rem;
-  padding: 10rem 20rem;
+  height: 120rem;
+  padding: 10rem 15rem;
 
   h1 {
     font-size: 4rem;
@@ -28,6 +28,10 @@ export const WrapperProducts = styled.div`
 
       background-color: #fff;
       transition: all 1s linear;
+
+      &:hover .card-button {
+        transform: translate(-50%, -20%);
+      }
 
       &:hover {
         border: 0.02rem solid rgba(0, 0, 0, 0.125);
@@ -74,10 +78,6 @@ export const WrapperProducts = styled.div`
         -webkit-transform: translate(-50%, 100%);
         transform: translate(-50%, 100%);
         transition: all 0.3s linear;
-      }
-
-      .img-container:hover .card-button {
-        transform: translate(-50%, -20%);
       }
     }
   }

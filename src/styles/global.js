@@ -40,7 +40,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font: 14px 'Roboto Slab', serif;
+    font: 14px Roboto Slab, sans-serif;
   }
 
   button {
