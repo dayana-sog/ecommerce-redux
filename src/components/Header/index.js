@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { FaChevronDown } from 'react-icons/fa';
 import { BsBag } from 'react-icons/bs';
-
 import logo from '../../assets/logo.png';
+
+import { useSelector } from 'react-redux';
 
 import { Container, Cart } from './styles';
 
 function Header() {
+  const cart = useSelector(state => state.cart.items.length);
+
   return (
     <Container>
       <Link to="/">
@@ -28,7 +30,7 @@ function Header() {
 
       <Cart to="/cart">
         <div>
-          <span>2 itens</span>
+          <span>{cart} itens</span>
         </div>
         <BsBag size={20} color="#333" />
       </Cart>

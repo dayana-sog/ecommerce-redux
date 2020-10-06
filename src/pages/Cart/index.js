@@ -1,19 +1,35 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, {useCallback} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
   MdDelete,
 } from 'react-icons/md';
 
-import img from '../../assets/celular1.jpg';
+import { formatPrice } from '../../util/format';
+
+import {
+  removeProductToCart,
+  UpdateAmountRequest
+} from '../../store/modules/cart/actions';
 
 import { Container, ProductTable, Total } from './styles';
 
 function Cart() {
   const cart = useSelector(state => state.cart.items);
+  const dispatch = useDispatch();
 
-  console.log(cart);
+  const handleDelete = useCallback((productId) => {
+    dispatch(removeProductToCart(productId));
+  }, [dispatch]);
+
+  const increaseQuantity = useCallback((item) => {
+    dispatch(UpdateAmountRequest(item.product.id, item.quantity + 1));
+  }, [dispatch]);
+
+  const decreaseQuantity = useCallback((item) => {
+    dispatch(UpdateAmountRequest(item.product.id, item.quantity - 1));
+  }, [dispatch]);
 
   return (
     <Container>
@@ -37,26 +53,26 @@ function Cart() {
               <td>
                 <strong>{item.product.title}</strong>
 
-                <span>{item.product.price}</span>
+                <span>{formatPrice(item.product.price)}</span>
               </td>
               <td>
                 <div>
-                  <button type="button" onClick={() => { }}>
+                  <button type="button" onClick={() => decreaseQuantity(item)}>
                     <MdRemoveCircleOutline size={20} color="#454777" />
                   </button>
 
                   <input type="number" readOnly value={item.quantity} />
 
-                  <button type="button" onClick={() => { }}>
+                  <button type="button" onClick={() => increaseQuantity(item)}>
                     <MdAddCircleOutline size={20} color="#454777" />
                   </button>
                 </div>
               </td>
               <td>
-                <strong>{item.product.price * item.quantity}</strong>
+                <strong>{formatPrice(item.product.price * item.quantity)}</strong>
               </td>
               <td>
-                <button type="button" onClick={() => { }}>
+                <button type="button" onClick={() => handleDelete(item.product.id)}>
                   <MdDelete size={20} color="#454777" />
                 </button>
               </td>

@@ -5,6 +5,8 @@ import api from '../../service/api';
 
 import { addProductToCart } from '../../store/modules/cart/actions';
 
+import { formatPrice } from '../../util/format';
+
 import { Container, WrapperProducts } from './styles';
 
 function Catalog() {
@@ -17,7 +19,7 @@ function Catalog() {
 
   const handleAddToCart = useCallback((product) => {
     dispatch(addProductToCart(product));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container>
@@ -39,7 +41,7 @@ function Catalog() {
               </div>
 
               <p>{product.title}</p>
-              <strong>{product.price}</strong>
+              <strong>{formatPrice(product.price)}</strong>
             </li>
           ))}
         </ul>
