@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import api from '../../service/api';
 
-import { addProductToCart } from '../../store/modules/cart/actions';
+import { addProductToCartRequest } from '../../store/modules/cart/actions';
 
 import { formatPrice } from '../../util/format';
 
@@ -18,7 +18,7 @@ function Catalog() {
   }, []);
 
   const handleAddToCart = useCallback((product) => {
-    dispatch(addProductToCart(product));
+    dispatch(addProductToCartRequest(product));
   }, [dispatch]);
 
   return (

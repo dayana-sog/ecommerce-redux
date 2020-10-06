@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 export default function reducer(state = INITIAL_STATE, action) {
   return produce(state, draft => {
     switch (action.type) {
-      case 'ADD_PRODUCT_TO_CART': {
+      case 'ADD_PRODUCT_TO_CART_SUCESS': {
         const { product } = action.payload;
 
         const productInCart = draft.items.findIndex(item => item.product.id === product.id);
@@ -23,7 +23,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         break;
       }
 
-      case 'UPDATE_AMOUNT': {
+      case 'UPDATE_AMOUNT_SUCCESS': {
         return produce(state, draft => {
         const { quantity, product } = action.payload;
         const productIndex = draft.items.findIndex(item => item.product.id === product);

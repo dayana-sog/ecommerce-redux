@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-// import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 // import background from '../assets/images/background.svg';
 
 export default createGlobalStyle`
@@ -48,9 +48,17 @@ export default createGlobalStyle`
 
 
   .toast {
-    background-color: #ffbb00;
+    background-color: #C2544E;
     font-size: 14px;
-    color: #ffbb00;
+    color: #fff;
     font-weight: bold;
+  }
+
+  .toast-add {
+    background-color: #3DA3C0;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 5rem;
   }
 `;

@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import CustomHistory from './service/history';
 
+import { ToastContainer } from 'react-toastify';
+
 import GlobalStyle from './styles/global';
 import Header from './components/Header';
 
@@ -16,6 +18,7 @@ function App() {
         <Header />
         <Routes />
         <GlobalStyle />
+        <ToastContainer />
       </Router>
     </Provider>
   );
