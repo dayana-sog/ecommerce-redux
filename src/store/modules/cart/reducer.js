@@ -2,6 +2,7 @@ import produce from 'immer';
 
 const INITIAL_STATE = {
   items: [],
+  inCart: false
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -18,6 +19,7 @@ export default function reducer(state = INITIAL_STATE, action) {
           draft.items.push({
             product,
             quantity: 1,
+            inCart: true,
           });
         }
         break;
@@ -40,6 +42,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         const deleted = draft.items.findIndex(item => item.product.id === productId);
 
         if (deleted >= 0) {
+          draft.items[deleted].inCart = false;
           draft.items.splice(deleted, 1);
         }
 

@@ -21,12 +21,14 @@ function* checkStock({ payload }) {
   if (hasProductInStock.data.amount > currentyQuantity) {
     yield put(addProductToCartSuccess(product));
 
-    toast.error('Produto adicionado ao carrinho', {
-      className: 'toast-add'
+    toast.success('Produto adicionado ao carrinho', {
+      className: 'toast-add',
+      autoClose: 2000,
     });
   } else {
-    toast.error('Quantidade de produto solicitada fora de estoque', {
-      className: 'toast'
+    toast.error('Quantidade de produto solicitada indiponível em estoque', {
+      className: 'toast',
+      autoClose: 2000,
     });
 
     return;
@@ -41,7 +43,7 @@ function* updateAmount({ payload: {product, quantity} }) {
   const stockAmount = stock.data.amount;
 
   if (quantity > stockAmount) {
-    toast.error('Quantidade de produto solicitada fora de estoque', {
+    toast.error('Quantidade de produto solicitada indiponível em estoque', {
       className: 'toast'
     });
 

@@ -73,6 +73,7 @@ export const ProductTable = styled.table`
 export const Total = styled.div`
   display: flex;
   align-items: baseline;
+
   span {
     color: #999;
     font-weight: bold;
@@ -81,4 +82,12 @@ export const Total = styled.div`
     font-size: 28px;
     margin-left: 5px;
   }
+`;
+
+export const EmptyContainer = styled.div`
+`;
+
+export const EmptyText = styled.div`
+  text-align: center;
+  font-size: 3rem;
 `;

@@ -1,10 +1,13 @@
-import React, {useCallback} from 'react';
+import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
   MdDelete,
 } from 'react-icons/md';
+import Lottie from 'lottie-react-web';
+
+import emptyBag from '../../assets/shopping-bag-error.json';
 
 import { formatPrice } from '../../util/format';
 
@@ -13,7 +16,13 @@ import {
   UpdateAmountRequest
 } from '../../store/modules/cart/actions';
 
-import { Container, ProductTable, Total } from './styles';
+import {
+  Container,
+  ProductTable,
+  Total,
+  EmptyContainer,
+  EmptyText,
+} from './styles';
 
 function Cart() {
   const cart = useSelector(state => state.cart.items);
@@ -31,9 +40,15 @@ function Cart() {
     dispatch(UpdateAmountRequest(item.product.id, item.quantity - 1));
   }, [dispatch]);
 
+  const cartPriceTotal = cart.reduce((total, item) => {
+    return total + item.product.price * item.quantity;
+  }, 0);
+
   return (
     <Container>
-      <ProductTable>
+      {cart.length ? (
+        <>
+         <ProductTable>
         <thead>
           <tr>
             <th />
@@ -86,9 +101,24 @@ function Cart() {
 
         <Total>
           <span>TOTAL</span>
-          <strong>1445,00€</strong>
+          <strong>{formatPrice(cartPriceTotal)}</strong>
         </Total>
       </footer>
+        </>
+      ): (
+        <EmptyContainer>
+          <Lottie
+            options={{
+              animationData: emptyBag,
+              loop: true,
+              autoplay: true,
+            }}
+            width="40%"
+            height="40%"
+          />
+          <EmptyText>Seu carrinho está vazio.</EmptyText>
+        </EmptyContainer>
+      )}
     </Container>
   );
 }

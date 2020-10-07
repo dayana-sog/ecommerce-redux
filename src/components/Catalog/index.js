@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import api from '../../service/api';
 
@@ -13,9 +13,14 @@ function Catalog() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
 
+  const isInCartData = useSelector(state => state.cart.items);
+  const isInCart = isInCartData.map(item => item.product.id);
+
+  // console.log(isInCart);
+
   useEffect(() => {
     api.get('/products').then((response) => setProducts(response.data));
-  }, []);
+  }, [isInCartData]);
 
   const handleAddToCart = useCallback((product) => {
     dispatch(addProductToCartRequest(product));
@@ -36,7 +41,7 @@ function Catalog() {
                   className="card-button"
                   onClick={() => handleAddToCart(product)}
                 >
-                  Add to cart
+                  {isInCart.find(item => item === product.id) ? 'IN CART': 'ADD TO CART' }
                 </button>
               </div>
 

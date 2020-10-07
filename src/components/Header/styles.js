@@ -31,6 +31,7 @@ export const Container = styled.header`
     li {
       margin-right: 6rem;
       transition: all 0.2s;
+      cursor: pointer;
 
       &:hover {
         color: var(--letter-red);

@@ -56,6 +56,7 @@ export const Container = styled.section`
 
       &:hover {
         opacity: 0.7;
+
       }
     }
   }

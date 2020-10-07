@@ -110,5 +110,13 @@ export const Banner2 = styled.div`
     border: 0;
     border-radius: 40px;
     margin-top: 2rem;
+
+    transition: all .3s;
+
+    &:hover {
+      background: var(--red-button);
+      color: var(--letter-white);
+      opacity: 0.7;
+    }
   }
 `;
